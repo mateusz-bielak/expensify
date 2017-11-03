@@ -20,7 +20,7 @@ const AppRouter = () => (
           path='/create'
           component={ AddExpensePage } />
         <Route
-          path='/edit'
+          path="/edit/:id"
           component={ EditExpensePage } />
         <Route
           path='/help'
