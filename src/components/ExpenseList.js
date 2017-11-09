@@ -1,23 +1,22 @@
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import React from 'react';
+import ExpenseListItem from './ExpenseListItem';
+import getVisibleExpenses from '../selectors/expenses';
 
 const ExpenseList = props => (
   <div>
     <h1>Expense List</h1>
-    {props.filters.text}
-    {props.expenses.length}
+    {props.expenses.map(expense => <ExpenseListItem key={expense.id} {...expense} />)}
   </div>
 );
 
 ExpenseList.propTypes = {
   expenses: PropTypes.arrayOf(PropTypes.object).isRequired,
-  filters: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
-  expenses: state.expenses,
-  filters: state.filters,
+  expenses: getVisibleExpenses(state.expenses, state.filters),
 });
 
 export default connect(mapStateToProps)(ExpenseList);
