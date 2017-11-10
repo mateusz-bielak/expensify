@@ -26,6 +26,7 @@ ExpenseListItem.propTypes = {
   amount: PropTypes.number.isRequired,
   createdAt: PropTypes.number.isRequired,
   id: PropTypes.string.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 export default connect()(ExpenseListItem);
