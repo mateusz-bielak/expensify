@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
@@ -11,7 +12,9 @@ const ExpenseListItem = ({
   dispatch,
 }) => (
   <div>
-    <h3>{description}</h3>
+    <Link to={`/edit/${id}`}>
+      <h3>{description}</h3>
+    </Link>
     <p>{amount} - {createdAt}</p>
     <button onClick={() => {
       dispatch(removeExpense({ id }));
