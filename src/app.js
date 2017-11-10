@@ -5,15 +5,14 @@ import AppRouter from './routers/AppRouter';
 import { addExpense } from './actions/expenses';
 import configureStore from './store/configureStore';
 // import getVisibleExpenses from './selectors/expenses';
-import { setTextFilter } from './actions/filters';
 import '../node_modules/normalize.css/normalize.css';
 import './styles/styles.scss';
 
 const store = configureStore();
 
-store.dispatch(addExpense({ description: 'Water bill', amount: 17, createdAt: 337780 }));
-store.dispatch(addExpense({ description: 'Gas bill', createdAt: 700 }));
-store.dispatch(setTextFilter('gas'));
+store.dispatch(addExpense({ description: 'Water bill', amount: 4500, createdAt: 7890 }));
+store.dispatch(addExpense({ description: 'Gas bill', amount: 3700, createdAt: 1000 }));
+store.dispatch(addExpense({ description: 'Rent', amount: 109500, createdAt: 4200 }));
 
 // const state = store.getState();
 // const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
