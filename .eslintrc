@@ -6,6 +6,8 @@
     "node": true
   },
 
+  "parser": "babel-eslint",
+
   "rules": {
     "linebreak-style": [
       "error", "windows"
