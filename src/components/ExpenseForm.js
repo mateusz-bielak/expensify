@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
@@ -11,6 +12,7 @@ export default class ExpenseForm extends React.Component {
     amount: '',
     createdAt: moment(),
     calendarFocused: false,
+    formError: '',
   };
   onDescriptionChange = (e) => {
     const description = e.target.value;
@@ -34,10 +36,25 @@ export default class ExpenseForm extends React.Component {
   onFocusChange = ({ focused }) => {
     this.setState(() => ({ calendarFocused: focused }));
   }
+  onSubmit = (e) => {
+    e.preventDefault();
+    if (!this.state.description || !this.state.amount) {
+      this.setState(() => ({ formError: 'Please provide description and amount' }));
+    } else {
+      this.setState(() => ({ formError: '' }));
+      this.props.onSubmit({
+        description: this.state.description,
+        amount: parseFloat(this.state.amount, 10) * 100,
+        createdAt: this.state.createdAt.valueOf(),
+        note: this.state.note,
+      });
+    }
+  }
   render() {
     return (
       <div>
-        <form>
+        {this.state.formError && <p>{this.state.formError}</p>}
+        <form onSubmit={this.onSubmit}>
           <input
             type="text"
             placeholder="Description"
@@ -70,3 +87,8 @@ export default class ExpenseForm extends React.Component {
     );
   }
 }
+
+ExpenseForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
+
