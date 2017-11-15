@@ -4,12 +4,18 @@ import React from 'react';
 import ExpenseListItem from './ExpenseListItem';
 import getVisibleExpenses from '../selectors/expenses';
 
-const ExpenseList = props => (
+// Exporting for testing purposes
+export const ExpenseList = props => (
   <div>
     <h1>Expense List</h1>
-    {props.expenses.map(expense => <ExpenseListItem key={expense.id} {...expense} />)}
+    {props.expenses.length !== 0 ? (
+      props.expenses.map(expense => <ExpenseListItem key={expense.id} {...expense} />)
+    ) : (
+      <p>Add some expenses</p>
+    )}
   </div>
 );
+
 
 ExpenseList.propTypes = {
   expenses: PropTypes.arrayOf(PropTypes.object).isRequired,
