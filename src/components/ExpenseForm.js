@@ -90,10 +90,11 @@ export default class ExpenseForm extends React.Component {
 }
 
 ExpenseForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func,
   expense: PropTypes.object,
 };
 
 ExpenseForm.defaultProps = {
+  onSubmit: undefined,
   expense: undefined,
 };
