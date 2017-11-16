@@ -18,6 +18,11 @@ const AppRouter = () => (
           exact
         />
         <Route
+          path="/expensify"
+          component={ExpenseDashboardPage}
+          exact
+        />
+        <Route
           path="/create"
           component={AddExpensePage}
         />
