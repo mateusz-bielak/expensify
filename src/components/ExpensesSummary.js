@@ -5,15 +5,17 @@ import numeral from 'numeral';
 import getExpensesTotal from '../selectors/expenses-total';
 import getVisibleExpenses from '../selectors/expenses';
 
-export const ExpensesSummary = props => (
-  <p>
-    {props.expenses.length === 1 ?
-  `Viewing ${props.expenses.length} expense totaling ${
-    numeral(getExpensesTotal(props.expenses) / 100).format('$0,0.00')}` :
-  `Viewing ${props.expenses.length} expenses totaling ${
-    numeral(getExpensesTotal(props.expenses) / 100).format('$0,0.00')}`}
-  </p>
-);
+export const ExpensesSummary = (props) => {
+  const expenseWord = props.expenses.length === 1 ? 'expense' : 'expenses';
+  const formattedExpensesTotal = numeral(getExpensesTotal(props.expenses) / 100).format('$0,0.00');
+  return (
+    <div>
+      <h1>
+        Viewing {props.expenses.length} {expenseWord} totaling {formattedExpensesTotal}
+      </h1>
+    </div>
+  );
+};
 
 ExpensesSummary.propTypes = {
   expenses: PropTypes.arrayOf(PropTypes.object).isRequired,
