@@ -49,3 +49,12 @@ test('should not edit expense when no id match', () => {
   const state = expensesReducer(expenses, action);
   expect(state).toEqual(expenses);
 });
+
+test('should set expenses after fetching data from firebase', () => {
+  const action = {
+    type: 'SET_EXPENSES',
+    expenses: [expenses[1]],
+  };
+  const state = expensesReducer(expenses, action);
+  expect(state).toEqual([expenses[1]]);
+});
