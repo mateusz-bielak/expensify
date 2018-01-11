@@ -5,7 +5,7 @@ import AddExpensePageConnected from '../components/AddExpensePage';
 import EditExpensePageConnected from '../components/EditExpensePage';
 import Header from '../components/Header';
 import HelpPage from '../components/HelpPage';
-import LoginPage from '../components/LoginPage';
+import LoginPageConnected from '../components/LoginPage';
 import NotFoundPage from '../components/NotFoundPage';
 
 const AppRouter = () => (
@@ -15,7 +15,7 @@ const AppRouter = () => (
       <Switch>
         <Route
           path="/"
-          component={LoginPage}
+          component={LoginPageConnected}
           exact
         />
         <Route
