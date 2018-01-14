@@ -1,41 +1,37 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
-import ExpenseDashboardPage from '../components/ExpenseDashboardPage';
 import AddExpensePageConnected from '../components/AddExpensePage';
 import EditExpensePageConnected from '../components/EditExpensePage';
-import Header from '../components/Header';
+import ExpenseDashboardPage from '../components/ExpenseDashboardPage';
+import HeaderConnected from '../components/Header';
 import HelpPage from '../components/HelpPage';
 import LoginPageConnected from '../components/LoginPage';
 import NotFoundPage from '../components/NotFoundPage';
+import PrivateRouteConnected from './PrivateRoute';
 
 export const history = createHistory();
 
 const AppRouter = () => (
   <Router history={history}>
     <div>
-      <Header />
+      <HeaderConnected />
       <Switch>
         <Route
           path="/"
           component={LoginPageConnected}
           exact
         />
-        <Route
+        <PrivateRouteConnected
           path="/dashboard"
           component={ExpenseDashboardPage}
           exact
         />
-        <Route
-          path="/expensify"
-          component={ExpenseDashboardPage}
-          exact
-        />
-        <Route
+        <PrivateRouteConnected
           path="/create"
           component={AddExpensePageConnected}
         />
-        <Route
+        <PrivateRouteConnected
           path="/edit/:id"
           component={EditExpensePageConnected}
         />
