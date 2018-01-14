@@ -4,7 +4,6 @@ import createHistory from 'history/createBrowserHistory';
 import AddExpensePageConnected from '../components/AddExpensePage';
 import EditExpensePageConnected from '../components/EditExpensePage';
 import ExpenseDashboardPage from '../components/ExpenseDashboardPage';
-import HelpPage from '../components/HelpPage';
 import LoginPageConnected from '../components/LoginPage';
 import NotFoundPage from '../components/NotFoundPage';
 import PrivateRouteConnected from './PrivateRoute';
@@ -32,10 +31,6 @@ const AppRouter = () => (
         <PrivateRouteConnected
           path="/edit/:id"
           component={EditExpensePageConnected}
-        />
-        <Route
-          path="/help"
-          component={HelpPage}
         />
         <Route component={NotFoundPage} />
       </Switch>
