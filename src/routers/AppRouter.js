@@ -4,7 +4,6 @@ import createHistory from 'history/createBrowserHistory';
 import AddExpensePageConnected from '../components/AddExpensePage';
 import EditExpensePageConnected from '../components/EditExpensePage';
 import ExpenseDashboardPage from '../components/ExpenseDashboardPage';
-import HeaderConnected from '../components/Header';
 import HelpPage from '../components/HelpPage';
 import LoginPageConnected from '../components/LoginPage';
 import NotFoundPage from '../components/NotFoundPage';
@@ -15,7 +14,6 @@ export const history = createHistory();
 const AppRouter = () => (
   <Router history={history}>
     <div>
-      <HeaderConnected />
       <Switch>
         <Route
           path="/"
