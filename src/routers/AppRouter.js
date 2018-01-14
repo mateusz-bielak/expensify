@@ -7,6 +7,7 @@ import ExpenseDashboardPage from '../components/ExpenseDashboardPage';
 import LoginPageConnected from '../components/LoginPage';
 import NotFoundPage from '../components/NotFoundPage';
 import PrivateRouteConnected from './PrivateRoute';
+import PublicRouteConnected from './PublicRoute';
 
 export const history = createHistory();
 
@@ -14,7 +15,7 @@ const AppRouter = () => (
   <Router history={history}>
     <div>
       <Switch>
-        <Route
+        <PublicRouteConnected
           path="/"
           component={LoginPageConnected}
           exact
