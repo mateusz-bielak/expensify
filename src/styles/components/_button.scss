@@ -2,7 +2,14 @@
   background-color: $blue;
   border: none;
   color: #ffffff;
+  display: inline-block;
   font-size: $font-size-large;
   font-weight: 300;
+  line-height: 1;
   padding: $s-size;
+  text-decoration: none;
+}
+
+.button--link {
+  background: none;
 }
