@@ -10,3 +10,8 @@
   @extend .text-input;
   color: $bright-grey;
 }
+
+.textarea {
+  @extend .text-input;
+  height: 10rem;
+}
