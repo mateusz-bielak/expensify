@@ -10,10 +10,9 @@
 }
 
 .input-group__item {
-  margin-right: $s-size;
+  margin-bottom: $s-size;
 
   @media (min-width: $desktop-breakpoint) {
-    margin-bottom: $s-size;
-    margin: 0 $s-size;
+    margin: 0 $s-size 0 0;
   }
 }
