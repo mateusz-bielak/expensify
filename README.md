@@ -1,7 +1,5 @@
 # Expensify - helps stick to your budget
 
-https://react-expensify-app-serv.herokuapp.com/ - click to see live.
-
 ### Usage
 
 Run application in your browser:
